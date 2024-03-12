@@ -95,6 +95,7 @@ height: 20rem;
 .hero-section .right-side .login-form-container .login-form .login-title {
   font-size: 1.7rem;
   padding: 0.5rem 0;
+  padding-bottom: 1rem;
   color: #E80000;
 }
 .hero-section .right-side .login-form-container .login-form .label {
@@ -102,7 +103,7 @@ height: 20rem;
 }
 .hero-section .right-side .login-form-container .login-form .input {
   margin: 0.4rem 0;
-  padding: 0.3rem;
+  padding: 0.4rem;
   width: 60%;
 }
 .hero-section .right-side .login-form-container .login-form .submit-btn {
@@ -139,13 +140,18 @@ height: 20rem;
     order: 2;
   }
   .hero-section .left-side .hero-img-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: auto;
+  }
+  .hero-section .left-side .hero-img-container .hero-img {
+    width: auto;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: auto;
   }
   .hero-section .right-side {
     width: 100%;
     padding: 0 1rem;
+    margin-top: 1rem;
   }
   .hero-section .right-side .logo-img-container {
     width: 100%;
@@ -165,5 +171,17 @@ height: 20rem;
   .hero-section .right-side .login-form-container {
     width: 100%;
     padding: 1rem 0;
+  }
+  .hero-section .right-side .login-form-container .login-form .login-title {
+    padding: 1rem 0;
+  }
+  .hero-section .right-side .login-form-container .login-form .label {
+    width: 80%;
+  }
+  .hero-section .right-side .login-form-container .login-form .input {
+    width: 80%;
+  }
+  .hero-section .right-side .login-form-container .login-form .submit-btn {
+    width: 50%;
   }
 }/*# sourceMappingURL=style.css.map */

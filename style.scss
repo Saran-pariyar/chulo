@@ -129,6 +129,7 @@ height: 20rem;
                     font-size: 1.7rem;
                     // margin-bottom: .8rem;
                     padding: .5rem 0;
+padding-bottom: 1rem;
                     color: #E80000;
                     // font-weight: bold;
                 }
@@ -141,7 +142,7 @@ height: 20rem;
 
                 .input {
                     margin: .4rem 0;
-                    padding: .3rem;
+                    padding: .4rem;
                     width: 60%;
                     // border-radius: 5px;
                 }
@@ -208,13 +209,17 @@ height: 20rem;
 
             .hero-img-container {
                 // border : 2px solid red ; 
-                display : flex; 
-                justify-content: center; 
-                align-items : center; 
-                
+                // display : flex; 
+                // justify-content: center; 
+                // align-items : center; 
+                height: auto;
 
                 .hero-img {
                     // width: 100%;
+                    width: auto;
+                    width: fit-content;
+                    // border : 2px solid red ; 
+                    height: auto;
                 }
             }
         }
@@ -222,6 +227,7 @@ height: 20rem;
         .right-side {
             width: 100%;
             padding: 0 1rem;
+            margin-top: 1rem;
 
             // margin: 0;
             // margin: 1rem 0;
@@ -233,10 +239,7 @@ height: 20rem;
                 // margin: 0;
 
                 .logo-img {
-                    // width: 12rem;
                     width: auto;
-                    // border : 2px solid red ; 
-                    // border : 2px solid red ; 
                 }
             }
 
@@ -256,13 +259,25 @@ height: 20rem;
             .login-form-container {
                 width: 100%;
                 padding: 1rem 0;
+                // border: none;
 
                 .login-form {
                     .login-title {
                         // text-align: center;
+                        padding: 1rem 0;
+                        // padding-bottom: 1.5rem;
+                        // border : 2px solid red ; 
+                    }
+                    .label{
+                        width: 80%;
+                    }
+                    .input {
+                        width: 80%;
+                    }
+                    .submit-btn{
+                        width: 50%;
                     }
 
-                    .input {}
                 }
             }
         }
