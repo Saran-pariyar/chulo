@@ -138,6 +138,11 @@ height: 20rem;
     width: 100%;
     order: 2;
   }
+  .hero-section .left-side .hero-img-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .hero-section .right-side {
     width: 100%;
     padding: 0 1rem;
