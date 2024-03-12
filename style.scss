@@ -47,8 +47,9 @@ height: 20rem;
 
         .hero-img-container {
             width: 100%;
-// border : 2px solid red ;
-height: 100vh; 
+            // border : 2px solid red ;
+            height: 100vh;
+
             // border: 1px solid black;
             .hero-img {
                 max-width: 100%;
@@ -70,22 +71,23 @@ height: 100vh;
         // border: 2px solid red;
 
 
-        .logo-img-container{
+        .logo-img-container {
             width: 70%;
             border: .2rem solid red;
             border-top: .2rem solid red;
             border-bottom: none;
-            display : flex; 
-            justify-content: center; 
-            align-items : center; 
-            
-        .logo-img {
-            // width: 12rem;
-            // height: 10rem;
-            height: 10rem;
-            // border : 2px solid red ; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .logo-img {
+                // width: 12rem;
+                // height: 10rem;
+                height: 10rem;
+                // border : 2px solid red ; 
+            }
         }
-    }
+
         .hero-title {
             font-weight: bold;
             font-size: 1.6rem;
@@ -102,10 +104,10 @@ height: 100vh;
         }
 
         .login-form-container {
-            border : .2rem solid red ; 
+            border: .2rem solid red;
             // border : 2px solid red ; 
             // border-bottom: none;
-            border-top:none ;
+            border-top: none;
             padding: .8rem .5rem;
             width: 70%;
             font-size: 1.2rem;
@@ -134,7 +136,7 @@ height: 100vh;
                 .label {
                     // order: 1;
                     width: 60%;
-                    
+
                 }
 
                 .input {
@@ -213,22 +215,23 @@ height: 100vh;
         .right-side {
             width: 100%;
             padding: 0 1rem;
+
             // margin: 0;
             // margin: 1rem 0;
             // margin: ;
             // border : 2px solid red ;
-.logo-img-container{
-width: 100%;
-// padding: 0;
-// margin: 0;
+            .logo-img-container {
+                width: 100%;
+                // padding: 0;
+                // margin: 0;
 
-    .logo-img {
-        // width: 12rem;
-        width: auto;
-        // border : 2px solid red ; 
-        // border : 2px solid red ; 
-    }
-}
+                .logo-img {
+                    // width: 12rem;
+                    width: auto;
+                    // border : 2px solid red ; 
+                    // border : 2px solid red ; 
+                }
+            }
 
             .hero-title {
                 font-size: 2rem;
@@ -237,14 +240,14 @@ width: 100%;
                 text-align: center;
 
             }
-            .hero-second-title{
+
+            .hero-second-title {
                 text-align: center;
             }
 
 
             .login-form-container {
                 width: 100%;
-                // margin: 1rem 0;
                 padding: 1rem 0;
 
                 .login-form {
