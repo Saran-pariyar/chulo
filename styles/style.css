@@ -51,38 +51,59 @@ height: 20rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-.hero-section .right-side .logo-img {
-  width: 15rem;
+.hero-section .right-side .logo-img-container {
+  width: 70%;
+  border: 0.2rem solid red;
+  border-top: 0.2rem solid red;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .right-side .logo-img-container .logo-img {
+  height: 10rem;
 }
 .hero-section .right-side .hero-title {
   font-weight: bold;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   padding-bottom: 0.5rem;
 }
 .hero-section .right-side .hero-title span {
   color: #E80000;
 }
 .hero-section .right-side .hero-second-title {
-  padding-bottom: 0.5rem;
+  padding: 1rem;
 }
 .hero-section .right-side .login-form-container {
-  padding: 0.2rem 1rem;
-  width: 80%;
+  border: 0.2rem solid red;
+  border-top: none;
+  padding: 0.8rem 0.5rem;
+  width: 70%;
   font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .hero-section .right-side .login-form-container .login-form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: center;
 }
 .hero-section .right-side .login-form-container .login-form .login-title {
   font-size: 1.7rem;
-  margin-bottom: 0.8rem;
+  padding: 0.5rem 0;
   color: #E80000;
+}
+.hero-section .right-side .login-form-container .login-form .label {
+  width: 60%;
 }
 .hero-section .right-side .login-form-container .login-form .input {
   margin: 0.4rem 0;
-  padding: 0.5rem;
+  padding: 0.3rem;
+  width: 60%;
 }
 .hero-section .right-side .login-form-container .login-form .submit-btn {
   padding: 0.5rem 1rem;
@@ -91,6 +112,7 @@ height: 20rem;
   color: #ffffff;
   transition: 0.3s all;
   cursor: pointer;
+  width: 60%;
 }
 .hero-section .right-side .login-form-container .login-form .submit-btn:hover {
   background-color: #ffffff;
@@ -98,6 +120,7 @@ height: 20rem;
 }
 .hero-section .right-side .login-form-container .signup-text {
   margin-top: 1.5rem;
+  text-align: center;
 }
 .hero-section .right-side .login-form-container .signup-text .signup-btn {
   color: blue;
@@ -119,8 +142,11 @@ height: 20rem;
     width: 100%;
     padding: 0 1rem;
   }
-  .hero-section .right-side .logo-img {
-    width: 12rem;
+  .hero-section .right-side .logo-img-container {
+    width: 100%;
+  }
+  .hero-section .right-side .logo-img-container .logo-img {
+    width: auto;
   }
   .hero-section .right-side .hero-title {
     font-size: 2rem;
@@ -128,8 +154,11 @@ height: 20rem;
     padding-bottom: 0.5rem;
     text-align: center;
   }
+  .hero-section .right-side .hero-second-title {
+    text-align: center;
+  }
   .hero-section .right-side .login-form-container {
     width: 100%;
-    margin: 1rem 0;
+    padding: 1rem 0;
   }
 }/*# sourceMappingURL=style.css.map */

@@ -62,17 +62,33 @@ height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
+        // background: url("assets/bg.gif"),rgba($#000000color: , $alpha: 1.0) ;
+        // background-blend-mode: darken;
+        // background-color: red;
+        // background-image: url("assets/bg.gif");
         // border: 2px solid red;
 
 
+        .logo-img-container{
+            width: 70%;
+            border: .2rem solid red;
+            border-top: .2rem solid red;
+            border-bottom: none;
+            display : flex; 
+            justify-content: center; 
+            align-items : center; 
+            
         .logo-img {
-            width: 15rem;
+            // width: 12rem;
+            // height: 10rem;
+            height: 10rem;
             // border : 2px solid red ; 
         }
-
+    }
         .hero-title {
             font-weight: bold;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             padding-bottom: .5rem;
 
             span {
@@ -81,34 +97,50 @@ height: 100vh;
         }
 
         .hero-second-title {
-            padding-bottom: .5rem;
+            padding: 1rem;
+            // border : 2px solid red ; 
         }
 
         .login-form-container {
+            border : .2rem solid red ; 
             // border : 2px solid red ; 
-            padding: .2rem 1rem;
-            width: 80%;
+            // border-bottom: none;
+            border-top:none ;
+            padding: .8rem .5rem;
+            width: 70%;
             font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            // justify-content: center;
 
 
             .login-form {
 
                 display: flex;
                 flex-direction: column;
+                width: 100%;
+                align-items: center;
 
                 // border : 2px solid red ; 
                 .login-title {
                     font-size: 1.7rem;
-                    margin-bottom: .8rem;
+                    // margin-bottom: .8rem;
+                    padding: .5rem 0;
                     color: #E80000;
                     // font-weight: bold;
                 }
 
-                .label {}
+                .label {
+                    // order: 1;
+                    width: 60%;
+                    
+                }
 
                 .input {
                     margin: .4rem 0;
-                    padding: .5rem;
+                    padding: .3rem;
+                    width: 60%;
                     // border-radius: 5px;
                 }
 
@@ -119,6 +151,7 @@ height: 100vh;
                     color: #ffffff;
                     transition: .3s all;
                     cursor: pointer;
+                    width: 60%;
 
                     &:hover {
                         background-color: #ffffff;
@@ -142,6 +175,7 @@ height: 100vh;
 
             .signup-text {
                 margin-top: 1.5rem;
+                text-align: center;
 
                 .signup-btn {
                     color: blue;
@@ -179,13 +213,22 @@ height: 100vh;
         .right-side {
             width: 100%;
             padding: 0 1rem;
+            // margin: 0;
             // margin: 1rem 0;
+            // margin: ;
             // border : 2px solid red ;
+.logo-img-container{
+width: 100%;
+// padding: 0;
+// margin: 0;
 
-            .logo-img {
-                width: 12rem;
-                // border : 2px solid red ; 
-            }
+    .logo-img {
+        // width: 12rem;
+        width: auto;
+        // border : 2px solid red ; 
+        // border : 2px solid red ; 
+    }
+}
 
             .hero-title {
                 font-size: 2rem;
@@ -194,10 +237,15 @@ height: 100vh;
                 text-align: center;
 
             }
+            .hero-second-title{
+                text-align: center;
+            }
+
 
             .login-form-container {
                 width: 100%;
-                margin: 1rem 0;
+                // margin: 1rem 0;
+                padding: 1rem 0;
 
                 .login-form {
                     .login-title {
