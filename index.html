@@ -4,16 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="icon" type="image/png" href="assets/logo.png">
     <title>Chulo - Premium Food Delivery</title>
 </head>
 <body>
 
-    <header>
+    <!-- <header>
         <div class="logo-container">
             <img class="logo-img" src="assets/logo.png" alt="Chulo Logo">
         </div>
         <h1 class="head-title">Chulo</h1>
-    </header>
+    </header> -->
+
+    <main>
+<section class="hero-section">
+    <div class="left-side">
+        <div class="hero-img-container">
+
+            <img class="hero-img" src="assets/hero-img.jpg" alt="">
+        </div>
+    </div>
+    <div class="right-side">
+        <img src="assets/logo.png" alt="" class="logo-img">
+        <h2 class="hero-title">
+            Welcome to <span> Chulo! </span>
+        </h2>
+        <h4 class="hero-second-title">
+            Easy and Quick Food Delivery.
+
+        </h4>
+        <div class="login-form-container">
+            <form class="login-form" action="/login" method="post">
+                <h3 class="login-title">Log In</h3>
+                
+                <label class="username-label label" for="username">Username:</label>
+                <input class="username-input input" type="text" id="username" name="username" required aria-label="Enter your username">
+        
+                <br>
+        
+                <label class="password-label label" for="password">Password:</label>
+                <input class="password-input input" type="password" id="password" name="password" required aria-label="Enter your password">
+        
+                <br>
+        
+                <input class="submit-btn" type="submit" value="Submit" role="button" aria-label="Submit the form">
+            </form>
+            <p class="signup-text"><a href="#" class="signup-btn">  Sign up</a> from here if you don't have an account.</p>
+        </div>
+    </div>
+</section>
+    </main>
     
 </body>
 </html>

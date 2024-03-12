@@ -2,21 +2,132 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
+  margin: 0 auto;
   max-width: 1440px;
-  border: 2px solid black;
 }
 
-header .logo-container {
-  display: flex;
-  justify-content: center;
-  height: 20rem;
+/*
+header{
+.logo-container{
+// border: 2px solid green;
+// width: 10rem;
+display: flex;
+justify-content: center;
+height: 20rem;
+    .logo-img{
+        // width: 2rem;
+        // height: 2rem;
+        max-width: 100%;
+        max-height: 100%;
+        // border: 2px solid red;
+
+    }
 }
-header .logo-container .logo-img {
+}
+
+
+*/
+.hero-section {
+  display: flex;
+  height: 100%;
+}
+.hero-section .left-side {
+  width: 50%;
+}
+.hero-section .left-side .hero-img-container {
+  width: 100%;
+}
+.hero-section .left-side .hero-img-container .hero-img {
   max-width: 100%;
-  max-height: 100%;
+}
+.hero-section .right-side {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero-section .right-side .logo-img {
+  width: 15rem;
+}
+.hero-section .right-side .hero-title {
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding-bottom: 0.5rem;
+}
+.hero-section .right-side .hero-title span {
+  color: #E80000;
+}
+.hero-section .right-side .hero-second-title {
+  padding-bottom: 0.5rem;
+}
+.hero-section .right-side .login-form-container {
+  padding: 0.2rem 1rem;
+  width: 80%;
+  font-size: 1.2rem;
+}
+.hero-section .right-side .login-form-container .login-form {
+  display: flex;
+  flex-direction: column;
+}
+.hero-section .right-side .login-form-container .login-form .login-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+  color: #E80000;
+}
+.hero-section .right-side .login-form-container .login-form .input {
+  margin: 0.4rem 0;
+  padding: 0.5rem;
+}
+.hero-section .right-side .login-form-container .login-form .submit-btn {
+  padding: 0.5rem 1rem;
+  border: 2px solid #E80000;
+  background-color: #E80000;
+  color: #ffffff;
+  transition: 0.3s all;
+  cursor: pointer;
+}
+.hero-section .right-side .login-form-container .login-form .submit-btn:hover {
+  background-color: #ffffff;
+  color: #E80000;
+}
+.hero-section .right-side .login-form-container .signup-text {
+  margin-top: 1.5rem;
+}
+.hero-section .right-side .login-form-container .signup-text .signup-btn {
+  color: blue;
+  text-decoration: none;
+}
+.hero-section .right-side .login-form-container .signup-text .signup-btn:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+  }
+  .hero-section .left-side {
+    width: 100%;
+    order: 2;
+  }
+  .hero-section .right-side {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  .hero-section .right-side .logo-img {
+    width: 12rem;
+  }
+  .hero-section .right-side .hero-title {
+    font-size: 2rem;
+    padding: 0 1rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+  }
+  .hero-section .right-side .login-form-container {
+    width: 100%;
+    margin: 1rem 0;
+  }
 }/*# sourceMappingURL=style.css.map */
