@@ -20,7 +20,7 @@ body .signup-section::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  opacity: 0.5; /* Adjust opacity as needed */
+  opacity: 0.5;
   z-index: -1;
 }
 body .signup-section .right-side {
@@ -115,7 +115,8 @@ body .signup-section .right-side .login-form-container .signup-text .signup-btn:
   body .signup-section .right-side {
     width: 90%;
   }
-  body .signup-section .right-side .login-form-container .login-form .label, body .signup-section .right-side .login-form-container .login-form .input {
+  body .signup-section .right-side .login-form-container .login-form .label,
+  body .signup-section .right-side .login-form-container .login-form .input {
     width: 90%;
   }
 }/*# sourceMappingURL=signup.css.map */
