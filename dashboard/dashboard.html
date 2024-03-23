@@ -29,54 +29,46 @@
         <img src="../assets/chulo_logo.png" class="logo" alt="Chulo logo" />
       </div>
     </header>
-    <nav>
+    <nav aria-label="Main">
       <ul class="nav-list">
-        <li><a href="" class="nav-link">Place</a></li>
+        <li><a href="" class="nav-link" aria-current="page">Place</a></li>
         <li><a href="" class="nav-link">Foods</a></li>
         <li><a href="" class="nav-link">Drinks</a></li>
         <li><a href="" class="nav-link">Your Order</a></li>
       </ul>
     </nav>
     <main>
-      <div class="food-card-container">
+      <div class="food-card-container" role="list">
         <!-- card 1 -->
-        <article class="food-card">
+        <article class="food-card" role="listitem">
           <div class="card-img-container">
             <img src="../assets/pizza.jpg" alt="Pizza" />
           </div>
           <div class="card-text-section">
             <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Pizza')"
-              ></i>
+              <i class="fas fa-volume-up sound-icon" onclick="speak('Pizza')"></i>
               <h3 class="food-title">Pizza</h3>
             </div>
             <button class="order-btn">Order Now</button>
           </div>
         </article>
-
-        <!-- card 2  -->
-
-        <article class="food-card">
-            <div class="card-img-container">
-              <img src="../assets/chowmin.jpg" alt="Pizza" />
+    
+        <!-- card 2 -->
+        <article class="food-card" role="listitem">
+          <div class="card-img-container">
+            <img src="../assets/chowmin.jpg" alt="Chowmin" />
+          </div>
+          <div class="card-text-section">
+            <div class="title-container">
+              <i class="fas fa-volume-up sound-icon" onclick="speak('Chowmin')"></i>
+              <h3 class="food-title">Chowmin</h3>
             </div>
-            <div class="card-text-section">
-              <div class="title-container">
-                <i
-                  class="fas fa-volume-up sound-icon"
-                  onclick="speak('Chowmin')"
-                ></i>
-                <h3 class="food-title">Chowmin</h3>
-              </div>
-              <button class="order-btn">Order Now</button>
-            </div>
-          </article>
-
-
+            <button class="order-btn">Order Now</button>
+          </div>
+        </article>
       </div>
     </main>
+    
 
     <script src="db.js"></script>
   </body>
