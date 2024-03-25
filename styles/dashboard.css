@@ -41,6 +41,7 @@ nav .nav-list li .nav-link:hover {
   padding: 1rem 2rem;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .food-card-container .food-card {
   width: 16rem;
