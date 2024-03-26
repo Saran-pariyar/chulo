@@ -113,4 +113,65 @@ nav .nav-list li .nav-link:hover {
   cursor: pointer;
   color: red;
   background-color: white;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+}
+footer .logo-section img {
+  width: 9rem;
+}
+footer .footer-list li {
+  list-style: none;
+}
+footer .footer-list li .footer-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  padding-bottom: 1rem;
+}
+footer .footer-list li .footer-link .fas {
+  padding: 0 0.5rem;
+}
+footer .footer-list li .footer-link:hover {
+  color: red;
+}
+footer .footer-list li .link-title {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: red;
+}
+footer .social-link-container h2 {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: red;
+}
+footer .social-link-container .social-links-section {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+footer .social-link-container .social-links-section .fab {
+  font-size: 2rem;
+  color: black;
+  transition: 0.3s all;
+}
+footer .social-link-container .social-links-section .fa-instagram:hover {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #FFEDB6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .social-link-container .social-links-section .fa-facebook:hover {
+  color: blue;
+}
+
+@media screen and (max-width: 1024px) {
+  footer {
+    flex-direction: column;
+    padding-left: 2rem;
+    width: auto;
+  }
 }/*# sourceMappingURL=dashboard.css.map */
