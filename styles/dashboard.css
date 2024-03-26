@@ -78,6 +78,10 @@ nav .nav-list li .nav-link:hover {
   padding: 0.5rem 0;
   width: 80%;
 }
+.food-card-container .food-card .card-text-section .price {
+  padding: 0.5rem 0;
+  font-weight: bold;
+}
 .food-card-container .food-card .card-text-section .order-btn {
   padding: 0.5rem 1rem;
   border-radius: 5px;
