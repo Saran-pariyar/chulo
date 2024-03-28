@@ -30,15 +30,24 @@ header .logo-container .logo-quote {
   color: #F6BF65;
 }
 
+.marquee {
+  font-size: 1.2rem;
+  padding: 0.5rem;
+  background-color: #F6BF65;
+  color: white;
+}
+
 nav .nav-list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   font-size: 1.2rem;
   font-weight: bold;
   background-color: red;
 }
 nav .nav-list li {
   list-style: none;
+  width: 33.33%;
+  text-align: center;
 }
 nav .nav-list li .nav-link {
   text-decoration: none;
@@ -46,10 +55,16 @@ nav .nav-list li .nav-link {
   padding: 1rem;
   transition: 0.3s all;
   display: inline-block;
+  width: 100%;
+  border-top: 2px solid red;
 }
 nav .nav-list li .nav-link:hover {
   color: red;
   background-color: white;
+}
+nav .nav-list .food-li {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
 }
 
 .food-card-container {
@@ -60,7 +75,7 @@ nav .nav-list li .nav-link:hover {
   justify-content: center;
 }
 .food-card-container .food-card {
-  width: 16rem;
+  width: 18rem;
   border: 4px solid red;
   border-radius: 5px;
   padding: 0.5rem;
