@@ -132,11 +132,15 @@ nav .nav-list .food-li {
 
 footer {
   display: flex;
-  justify-content: space-around;
-  width: 50%;
+}
+footer .logo-section {
+  width: auto;
 }
 footer .logo-section img {
   width: 9rem;
+}
+footer .footer-list {
+  width: 50%;
 }
 footer .footer-list li {
   list-style: none;
@@ -167,20 +171,38 @@ footer .social-link-container h2 {
 footer .social-link-container .social-links-section {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  flex-direction: column;
 }
-footer .social-link-container .social-links-section .fab {
+footer .social-link-container .social-links-section a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+  font-weight: bold;
+  color: black;
+}
+footer .social-link-container .social-links-section a .fab {
   font-size: 2rem;
   color: black;
   transition: 0.3s all;
+  padding-right: 0.5rem;
 }
-footer .social-link-container .social-links-section .fa-instagram:hover {
+footer .social-link-container .social-links-section a .fa-instagram:hover {
   background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #FFEDB6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-footer .social-link-container .social-links-section .fa-facebook:hover {
+footer .social-link-container .social-links-section a .fa-facebook:hover {
   color: blue;
+}
+footer .social-link-container .social-links-section .facebook-text:hover {
+  background-color: blue;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+footer .social-link-container .social-links-section .insta-text:hover {
+  background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #FFEDB6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 1024px) {
