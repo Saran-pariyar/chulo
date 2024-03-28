@@ -1,5 +1,12 @@
 *.scss
 /.scss
 scss
+
+.map
 *.map
 /.map
+
+
+*.css.map
+/.css.map
+css.map
