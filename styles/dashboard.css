@@ -132,33 +132,35 @@ nav .nav-list .food-li {
 
 footer {
   display: flex;
+  justify-content: space-between;
 }
-footer .logo-section {
+footer .logo-and-contact-section {
+  display: flex;
+  gap: 1rem;
+}
+footer .logo-and-contact-section .logo-section {
   width: auto;
 }
-footer .logo-section img {
+footer .logo-and-contact-section .logo-section img {
   width: 9rem;
 }
-footer .footer-list {
-  width: 50%;
-}
-footer .footer-list li {
+footer .logo-and-contact-section .footer-list li {
   list-style: none;
 }
-footer .footer-list li .footer-link {
+footer .logo-and-contact-section .footer-list li .footer-link {
   text-decoration: none;
   font-weight: bold;
   color: black;
   display: inline-block;
   padding-bottom: 1rem;
 }
-footer .footer-list li .footer-link .fas {
+footer .logo-and-contact-section .footer-list li .footer-link .fas {
   padding: 0 0.5rem;
 }
-footer .footer-list li .footer-link:hover {
+footer .logo-and-contact-section .footer-list li .footer-link:hover {
   color: red;
 }
-footer .footer-list li .link-title {
+footer .logo-and-contact-section .footer-list li .link-title {
   font-size: 1.5rem;
   padding: 1rem 0;
   color: red;
@@ -204,11 +206,40 @@ footer .social-link-container .social-links-section .insta-text:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+footer .qr-section {
+  padding-right: 2rem;
+}
+footer .qr-section .qr-title {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: red;
+}
+footer .qr-section .qr-container {
+  display: flex;
+}
+footer .qr-section .qr-container .qr-img {
+  max-width: 100%;
+  width: 10rem;
+}
 
 @media screen and (max-width: 1024px) {
   footer {
     flex-direction: column;
     padding-left: 2rem;
     width: auto;
+  }
+  footer .logo-and-contact-section {
+    flex-direction: column;
+  }
+  footer .qr-section {
+    margin-top: 1rem;
+  }
+  footer .qr-section .qr-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .qr-section .qr-container .qr-img {
+    width: 100%;
+    margin: 1rem 0;
   }
 }/*# sourceMappingURL=dashboard.css.map */
