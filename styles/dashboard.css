@@ -133,6 +133,7 @@ nav .nav-list .food-li {
 footer {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 footer .logo-and-contact-section {
   display: flex;
