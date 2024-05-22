@@ -132,18 +132,19 @@ nav .nav-list .food-li {
 
 footer {
   display: flex;
-  justify-content: space-between;
   margin-bottom: 1rem;
+  gap: 3rem;
+  justify-content: space-around;
+}
+footer .logo-section {
+  width: auto;
+}
+footer .logo-section img {
+  width: 11rem;
 }
 footer .logo-and-contact-section {
   display: flex;
   gap: 1rem;
-}
-footer .logo-and-contact-section .logo-section {
-  width: auto;
-}
-footer .logo-and-contact-section .logo-section img {
-  width: 9rem;
 }
 footer .logo-and-contact-section .footer-list li {
   list-style: none;

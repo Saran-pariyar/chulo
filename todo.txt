@@ -1,0 +1,6 @@
+- footer chulo logo (make bigger, just like fize of contact and social media. like it reaches "for enquiry" text)
+- mobile banking remove payment Methods
+- make food image more long (make like square)
+- test making new background of dashboard
+- make page of order
+- make login and signup work
