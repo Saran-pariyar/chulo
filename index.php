@@ -1,3 +1,41 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Create connection
+    $conn = new mysqli("localhost", "root", "", "chulo");
+
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT * FROM users WHERE name='$username' AND password='$password'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        // User found, login successful
+        echo "<script>alert('Login successful. Welcome " . $username . "!');
+        window.location.href = 'dashboard/dashboard.html';
+        </script>";
+
+    } else {
+        // No user found
+        echo "<script>alert('Invalid username or password.');
+        
+
+        </script>";
+    }
+
+    $conn->close();
+}
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,7 +65,7 @@
           <div class="login-form-container">
             <h2 class="hero-title">Welcome to <span> Chulo! </span></h2>
             <h4 class="hero-second-title">Easy and Quick Food Delivery.</h4>
-            <form class="login-form" action="/login" method="post">
+            <form class="login-form" action="index.php" method="post">
               <h3 class="login-title">Log In</h3>
 
               <label class="username-label label" for="username"
