@@ -1,3 +1,58 @@
+<?php
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (isset($_POST['username']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['mobile'])) {
+        $username = $_POST['username'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $mobile = $_POST['mobile'];
+
+        // Create connection
+        $conn = new mysqli("localhost", "root", "", "chulo");
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Check if email already exists
+        $checkEmail = "SELECT * FROM users WHERE email='$email'";
+        $emailResult = $conn->query($checkEmail);
+
+        if ($emailResult->num_rows > 0) {
+            // Email already exists
+            echo "<script>
+                    alert('Email already registered. Please use a different email.');
+                    window.location.href = 'signup.php';
+                  </script>";
+        } else {
+            $sql = "INSERT INTO users (name, email, password, mobile) VALUES ('$username', '$email', '$password', '$mobile')";
+            if ($conn->query($sql) === TRUE) {
+                // User successfully created
+                echo "<script>
+                        alert('Account created successfully. Please log in.');
+                        window.location.href = 'index.php';
+                      </script>";
+            } else {
+                // Error occurred during insertion
+                echo "<script>
+                        alert('Error: " . $sql . "<br>" . $conn->error . "');
+                        window.location.href = 'signup.php';
+                      </script>";
+            }
+        }
+
+        // Close the connection
+        $conn->close();
+    } else {
+        echo "<script>
+                alert('Please fill all fields.');
+                window.location.href = 'signup.php';
+              </script>";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +77,7 @@
           <h2 class="hero-title">Become a part of <span> Chulo! </span></h2>
           <!-- <h4 class="hero-second-title">Join us and explore the power of online food delivery with us.</h4> -->
           <p>Create an account and start ordering, it's that simple : &rpar;</p>
-          <form class="login-form" action="/login" method="post">
+          <form class="login-form" action="signup.php" method="post">
             <h3 class="login-title">Sign Up</h3>
 
             <label class="username-label label" for="username">Username:</label>
@@ -35,6 +90,16 @@
               aria-label="Enter your username"
             />
 
+            <br />
+            <label class="mobile-label label" for="mobile">Phone:</label>
+            <input
+              class="email-input input"
+              type="number"
+              id="mobile"
+              name="mobile"
+              required
+              aria-label="Enter your phone number"
+            />
             <br />
             <label class="email-label label" for="email">Email:</label>
             <input

@@ -105,7 +105,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
               />
             </form>
             <p class="signup-text">
-              <a href="signup.html" class="signup-btn"> Sign up</a> to create an
+              <a href="signup.php" class="signup-btn"> Sign up</a> to create an
               account.
             </p>
           </div>
