@@ -140,7 +140,7 @@ footer .logo-section {
   width: auto;
 }
 footer .logo-section img {
-  width: 11rem;
+  width: 14rem;
 }
 footer .logo-and-contact-section {
   display: flex;
@@ -207,6 +207,22 @@ footer .social-link-container .social-links-section .insta-text:hover {
   background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80, #FFEDB6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+footer .qr-section {
+  padding-right: 2rem;
+}
+footer .qr-section .qr-title {
+  font-size: 1.5rem;
+  padding: 1rem 0;
+  color: red;
+}
+footer .qr-section .qr-container {
+  display: flex;
+  justify-content: center;
+}
+footer .qr-section .qr-container .qr-img {
+  max-width: 100%;
+  width: 10rem;
 }
 
 @media screen and (max-width: 1024px) {
