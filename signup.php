@@ -7,20 +7,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $password = $_POST['password'];
         $mobile = $_POST['mobile'];
 
-        // Create connection
         $conn = new mysqli("localhost", "root", "", "chulo");
 
-        // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
 
-        // Check if email already exists
         $checkEmail = "SELECT * FROM users WHERE email='$email'";
         $emailResult = $conn->query($checkEmail);
 
         if ($emailResult->num_rows > 0) {
-            // Email already exists
             echo "<script>
                     alert('Email already registered. Please use a different email.');
                     window.location.href = 'signup.php';

@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+// Check if the username is set in the session
+if (!isset($_SESSION['username'])) {
+    // If not, redirect to the login page
+    header("Location: index.php");
+    exit();
+}
+else{
+  // echo $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,6 +43,7 @@
     -->
 
     <header>
+      <span class="username"> Welcome <?php echo $_SESSION["username"] ?>!</span>
       <div class="logo-container">
         <img src="../assets/chulo_logo.png" class="logo" alt="Chulo logo" />
         <div class="logo-texts">

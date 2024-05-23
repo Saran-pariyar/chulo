@@ -1,11 +1,12 @@
 <?php
+session_start();
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Create connection
     $conn = new mysqli("localhost", "root", "", "chulo");
 
     if ($conn->connect_error) {
@@ -16,9 +17,11 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
+      $_SESSION['username'] = $username;
+
         // User found, login successful
         echo "<script>alert('Login successful. Welcome " . $username . "!');
-        window.location.href = 'dashboard/dashboard.html';
+        window.location.href = 'dashboard/dashboard.php';
         </script>";
 
     } else {
