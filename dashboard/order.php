@@ -26,13 +26,13 @@ $image = $_SESSION['image'];
         <h1>Place Your Order</h1>
         <img src="<?php echo $image; ?>" alt="<?php echo $foodname; ?>" class="food-image">
         <div class="order-details">
-            <p><strong>Food Name:</strong> <?php echo $foodname; ?></p>
-            <p><strong>Price:</strong> Rs <?php echo $price; ?></p>
-            <p><strong>Buyer Name:</strong> <?php echo $username; ?></p>
+            <p>Food Name: <strong> <?php echo $foodname; ?> </strong></p>
+            <p>Price:  <strong>Rs <?php echo $price; ?> </strong></p>
+            <p>Buyer Name: <strong> <?php echo $username; ?> </strong></p>
         </div>
         <form action="submit_order.php" method="post">
-            <div class="form-group">
-                <label for="quantity">Quantity:</label>
+            <div class="form-group quantity-group">
+                <label for="quantity" id="quantity-label">Quantity:</label>
                 <input type="number" id="quantity" name="quantity" min="1" value="1" required>
             </div>
             <input type="hidden" name="foodname" value="<?php echo $foodname; ?>">
