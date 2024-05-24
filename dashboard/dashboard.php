@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css?<?= filemtime($_SERVER["DOCUMENT_ROOT"] . "/style.css"); ?>" />
 
     <!-- font awesome  -->
     <link
@@ -59,13 +59,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     -->
 
     <header>
-      <span class="username"> Welcome <?php echo $_SESSION["username"] ?>!</span>
       <div class="logo-container">
         <img src="../assets/chulo_logo.png" class="logo" alt="Chulo logo" />
         <div class="logo-texts">
           <h1 class="logo-title">CHULO</h1>
           <p class="logo-quote">Order just one click away.</p>
         </div>
+        <span   id="username"> Welcome <?php echo $_SESSION["username"] ?>!</span>
+        <button class="logout-btn">Log Out</button>
       </div>
     </header>
     <nav aria-label="Main">
