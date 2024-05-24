@@ -13,9 +13,13 @@ else{
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   // Check if the 'price' field is set in the POST data
-  if (isset($_POST['price'])) {
+  if (isset($_POST['foodname'])) {
       // Save the price in the session
       $_SESSION['price'] = $_POST['price'];
+      $_SESSION['image'] = $_POST['image'];
+      $_SESSION['foodname'] = $_POST['foodname'];
+
+
       
       // Redirect to the same page to prevent form resubmission
       header("Location: order.php");
@@ -84,27 +88,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <main>
       <div class="food-card-container" role="list">
         <!-- card 1 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/pizza.jpg" alt="Pizza" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Pizza')"
-              ></i>
-              <h3 class="food-title">Pizza</h3>
-            </div>
-            <p class="price">Rs 250</p>
-            <button class="order-btn" type="submit">Order Now</button>
-          </div>
-        </article>
+        <form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Pizza" />
+    <input type="hidden" name="price" value="250" />
+    <input type="hidden" name="image" value="../assets/pizza.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/pizza.jpg" alt="Pizza" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Pizza')"></i>
+            <h3 class="food-title">Pizza</h3>
+        </div>
+        <p class="price">Rs 250</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
 
         <!-- card 2 -->
         <form class="food-card" role="listitem" action="dashboard.php" method="post">
-        <input type="hidden" name="food-title" value="Chowmin" />
+        <input type="hidden" name="foodname" value="Chowmin" />
         <input type="hidden" name="price" value="120" />
+        <input type="hidden" name="image" value="../assets/chowmin.jpg" />
+
           <div class="card-img-container">
             <img src="../assets/chowmin.jpg" alt="Chowmin" />
           </div>
@@ -121,131 +128,139 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           </div>
         </form>
 
-        <!-- fake card  -->
+        
 
-        <!-- card 1 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/pizza.jpg" alt="Pizza" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Pizza')"
-              ></i>
-              <h3 class="food-title">Pizza</h3>
-            </div>
-            <p class="price">Rs 250</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
-
-        <!-- card 2 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/chowmin.jpg" alt="Chowmin" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Chowmin')"
-              ></i>
-              <h3 class="food-title">Chowmin</h3>
-            </div>
-            <p class="price">Rs 120</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
         <!-- card 3 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/chicken_chillie.jpeg" alt="Chicken Chillie" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Chicken Chillie')"
-              ></i>
-              <h3 class="food-title">Chicken Chillie</h3>
-            </div>
-            <p class="price">Rs 250</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
+        <form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Pizza" />
+    <input type="hidden" name="price" value="250" />
+    <input type="hidden" name="image" value="../assets/pizza.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/pizza.jpg" alt="Pizza" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Pizza')"></i>
+            <h3 class="food-title">Pizza</h3>
+        </div>
+        <p class="price">Rs 250</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
 
         <!-- card 4 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/spicy_wings.jpg" alt="Spicy Wings" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Spicy Wings')"
-              ></i>
-              <h3 class="food-title">Spicy Wings</h3>
-            </div>
-            <p class="price">Rs 200</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
-        <!-- card 5 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/burger.jpg" alt="Burger" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Burger')"
-              ></i>
-              <h3 class="food-title">Burger</h3>
-            </div>
-            <p class="price">Rs 250</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
+        <form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Chowmin" />
+    <input type="hidden" name="price" value="120" />
+    <input type="hidden" name="image" value="../assets/chowmin.jpg" />
 
-        <!-- card 6 -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/biryani.jpg" alt="Biryani" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Biryani')"
-              ></i>
-              <h3 class="food-title">Biryani</h3>
-            </div>
-            <p class="price">Rs 200</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
+    <div class="card-img-container">
+        <img src="../assets/chowmin.jpg" alt="Chowmin" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Chowmin')"></i>
+            <h3 class="food-title">Chowmin</h3>
+        </div>
+        <p class="price">Rs 120</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+  <!-- card 5 -->
+<form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Chicken Chillie" />
+    <input type="hidden" name="price" value="250" />
+    <input type="hidden" name="image" value="../assets/chicken_chillie.jpeg" />
 
-        <!-- card 7  -->
-        <article class="food-card" role="listitem">
-          <div class="card-img-container">
-            <img src="../assets/momo.jpg" alt="Momo" />
-          </div>
-          <div class="card-text-section">
-            <div class="title-container">
-              <i
-                class="fas fa-volume-up sound-icon"
-                onclick="speak('Momo')"
-              ></i>
-              <h3 class="food-title">Momo</h3>
-            </div>
-            <p class="price">Rs 120</p>
-            <button class="order-btn">Order Now</button>
-          </div>
-        </article>
+    <div class="card-img-container">
+        <img src="../assets/chicken_chillie.jpeg" alt="Chicken Chillie" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Chicken Chillie')"></i>
+            <h3 class="food-title">Chicken Chillie</h3>
+        </div>
+        <p class="price">Rs 250</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+
+<!-- card 6 -->
+<form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Spicy Wings" />
+    <input type="hidden" name="price" value="200" />
+    <input type="hidden" name="image" value="../assets/spicy_wings.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/spicy_wings.jpg" alt="Spicy Wings" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Spicy Wings')"></i>
+            <h3 class="food-title">Spicy Wings</h3>
+        </div>
+        <p class="price">Rs 200</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+      <!-- card 7 -->
+<form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Burger" />
+    <input type="hidden" name="price" value="250" />
+    <input type="hidden" name="image" value="../assets/burger.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/burger.jpg" alt="Burger" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Burger')"></i>
+            <h3 class="food-title">Burger</h3>
+        </div>
+        <p class="price">Rs 250</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+
+<!-- card 8 -->
+<form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Biryani" />
+    <input type="hidden" name="price" value="200" />
+    <input type="hidden" name="image" value="../assets/biryani.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/biryani.jpg" alt="Biryani" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Biryani')"></i>
+            <h3 class="food-title">Biryani</h3>
+        </div>
+        <p class="price">Rs 200</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+
+        <!-- card 9  -->
+        <form class="food-card" role="listitem" action="dashboard.php" method="post">
+    <input type="hidden" name="foodname" value="Momo" />
+    <input type="hidden" name="price" value="120" />
+    <input type="hidden" name="image" value="../assets/momo.jpg" />
+
+    <div class="card-img-container">
+        <img src="../assets/momo.jpg" alt="Momo" />
+    </div>
+    <div class="card-text-section">
+        <div class="title-container">
+            <i class="fas fa-volume-up sound-icon" onclick="speak('Momo')"></i>
+            <h3 class="food-title">Momo</h3>
+        </div>
+        <p class="price">Rs 120</p>
+        <button class="order-btn" type="submit">Order Now</button>
+    </div>
+</form>
+
       </div>
     </main>
     <hr />

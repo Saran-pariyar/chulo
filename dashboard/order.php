@@ -1,40 +1,41 @@
 <?php 
-
 session_start();
 
-// $food = $_SESSION['foodname'];
-// echo $_SESSION['username'];
-echo $_SESSION["price"];
+if (!isset($_SESSION['username']) || !isset($_SESSION['foodname'])) {
+    // If not, redirect to the login page
+    header("Location: index.php");
+    exit();
+}
 
-
-
+$username = $_SESSION['username'];
+$foodname = $_SESSION['foodname'];
+$price = $_SESSION['price'];
+$image = $_SESSION['image'];
 ?>
 
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Card</title>
+    <title>Order Page</title>
     <link rel="stylesheet" href="../styles/order.css">
 </head>
 <body>
-    <div class="order-card">
-        <h2>Place Your Order</h2>
+    <div class="order-container">
+        <h1>Place Your Order</h1>
+        <img src="<?php echo $image; ?>" alt="<?php echo $foodname; ?>" class="food-image">
+        <div class="order-details">
+            <p><strong>Food Name:</strong> <?php echo $foodname; ?></p>
+            <p><strong>Price:</strong> Rs <?php echo $price; ?></p>
+            <p><strong>Buyer Name:</strong> <?php echo $username; ?></p>
+        </div>
         <form action="submit_order.php" method="post">
             <div class="form-group">
-                <label for="foodname">Food Name:</label>
-                <input type="text" id="foodname" name="foodname" required>
-            </div>
-            <div class="form-group">
                 <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" required>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
             </div>
-            <div class="form-group">
-                <label for="buyername">Buyer Name:</label>
-                <input type="text" id="buyername" name="buyername" required>
-            </div>
+            <input type="hidden" name="foodname" value="<?php echo $foodname; ?>">
             <button type="submit">Submit Order</button>
         </form>
     </div>
