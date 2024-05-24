@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['username']) || !isset($_SESSION['foodname'])) {
     // If not, redirect to the login page
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 

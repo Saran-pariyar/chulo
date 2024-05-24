@@ -4,7 +4,7 @@ session_start();
 // Check if the username is set in the session
 if (!isset($_SESSION['username'])) {
     // If not, redirect to the login page
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 else{
@@ -25,6 +25,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       header("Location: order.php");
       exit(); // Always exit after redirecting to prevent further execution
   }
+}
+
+// Logout functionality
+if (isset($_POST['logout'])) {
+  // Remove the username session
+  unset($_SESSION['username']);
+  // Redirect to the login page or any other page after logout
+  // header("Location: ");
+  header("Location: ../index.php");
+
+  exit();
 }
 ?>
 
@@ -66,7 +77,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <p class="logo-quote">Order just one click away.</p>
         </div>
         <span   id="username"> Welcome <?php echo $_SESSION["username"] ?>!</span>
-        <button class="logout-btn">Log Out</button>
+        <form action="" method="post" class="logout-form">
+        <button class="logout-btn" type="submit" name="logout">Log Out</button>
+        </form>
+        
       </div>
     </header>
     <nav aria-label="Main">

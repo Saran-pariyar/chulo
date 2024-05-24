@@ -36,7 +36,12 @@ header .logo-container #username {
   top: 1rem;
   right: 2rem;
 }
-header .logo-container .logout-btn {
+header .logo-container .logout-form {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+}
+header .logo-container .logout-form .logout-btn {
   padding: 0.5rem 1rem;
   border-radius: 5px;
   font-weight: 500;
@@ -46,11 +51,8 @@ header .logo-container .logout-btn {
   border: 2px solid red;
   transition: 0.3s all;
   font-weight: bold;
-  position: absolute;
-  top: 3rem;
-  right: 2rem;
 }
-header .logo-container .logout-btn:hover {
+header .logo-container .logout-form .logout-btn:hover {
   cursor: pointer;
   color: red;
   background-color: white;
