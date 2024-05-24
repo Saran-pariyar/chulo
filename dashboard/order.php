@@ -1,10 +1,23 @@
+<?php 
+
+session_start();
+
+// $food = $_SESSION['foodname'];
+// echo $_SESSION['username'];
+echo $_SESSION["price"];
+
+
+
+?>
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Card</title>
-    <link rel="stylesheet" href="styles/order.css">
+    <link rel="stylesheet" href="../styles/order.css">
 </head>
 <body>
     <div class="order-card">

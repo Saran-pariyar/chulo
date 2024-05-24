@@ -10,6 +10,18 @@ if (!isset($_SESSION['username'])) {
 else{
   // echo $_SESSION['username'];
 }
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+  // Check if the 'price' field is set in the POST data
+  if (isset($_POST['price'])) {
+      // Save the price in the session
+      $_SESSION['price'] = $_POST['price'];
+      
+      // Redirect to the same page to prevent form resubmission
+      header("Location: order.php");
+      exit(); // Always exit after redirecting to prevent further execution
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -85,12 +97,14 @@ else{
               <h3 class="food-title">Pizza</h3>
             </div>
             <p class="price">Rs 250</p>
-            <button class="order-btn">Order Now</button>
+            <button class="order-btn" type="submit">Order Now</button>
           </div>
         </article>
 
         <!-- card 2 -->
-        <article class="food-card" role="listitem">
+        <form class="food-card" role="listitem" action="dashboard.php" method="post">
+        <input type="hidden" name="food-title" value="Chowmin" />
+        <input type="hidden" name="price" value="120" />
           <div class="card-img-container">
             <img src="../assets/chowmin.jpg" alt="Chowmin" />
           </div>
@@ -103,9 +117,9 @@ else{
               <h3 class="food-title">Chowmin</h3>
             </div>
             <p class="price">Rs 120</p>
-            <button class="order-btn">Order Now</button>
+            <button class="order-btn" type="submit">Order Now</button>
           </div>
-        </article>
+        </form>
 
         <!-- fake card  -->
 
