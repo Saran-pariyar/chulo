@@ -1,6 +1,4 @@
 <?php
-
-
 session_start();
 
 // Check if the username is set in the session
@@ -9,16 +7,15 @@ if (!isset($_SESSION['username'])) {
     header("Location: ../index.php");
     exit();
 }
+
 // Logout functionality
 if (isset($_POST['logout'])) {
     // Remove the username session
     unset($_SESSION['username']);
     // Redirect to the login page or any other page after logout
-    // header("Location: ");
     header("Location: ../index.php");
-  
     exit();
-  }
+}
 
 // Connect to the database
 $servername = "localhost";
@@ -32,6 +29,16 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
+}
+
+// Handle delete request
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['delete'])) {
+    $orderId = $_POST['order_id'];
+    $deleteSql = "DELETE FROM orders WHERE id = ?";
+    $stmt = $conn->prepare($deleteSql);
+    $stmt->bind_param("i", $orderId);
+    $stmt->execute();
+    $stmt->close();
 }
 
 // Fetch orders
@@ -53,11 +60,10 @@ $result = $conn->query($sql);
         <h1>Admin Panel</h1>
         <nav>
             <ul>
-                <!-- <li><a href="admin.php">Orders</a></li> -->
                 <li>
-                <form action="" method="post" class="logout-form">
-        <button class="logout-btn" type="submit" name="logout">Log Out</button>
-        </form>
+                    <form action="" method="post" class="logout-form">
+                        <button class="state-btn" type="submit" name="logout">Log Out</button>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -67,11 +73,12 @@ $result = $conn->query($sql);
         <table>
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Food Name</th>
+                    <th>No.</th>
                     <th>Buyer Name</th>
-                    <th>Price</th>
+                    <th>Food Name</th>
                     <th>Quantity</th>
+                    <th>Total</th>
+                    <th>State</th>
                 </tr>
             </thead>
             <tbody>
@@ -81,15 +88,21 @@ $result = $conn->query($sql);
                     while($row = $result->fetch_assoc()) {
                         echo "<tr>
                                 <td>" . $rowNumber . "</td>
-                                <td>" . $row["food_name"] . "</td>
                                 <td>" . $row["buyer_name"] . "</td>
-                                <td>" . $row["price"] . "</td>
+                                <td>" . $row["food_name"] . "</td>
                                 <td>" . $row["quantity"] . "</td>
+                                <td>" . $row["price"] . "</td>
+                                <td>
+                                    <form method='post' action='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' onsubmit='return confirm(\"Are you sure you want to delete this order?\");'>
+                                        <input type='hidden' name='order_id' value='" . $row["id"] . "'>
+                                        <button type='submit' name='delete' class='state-btn'>Order Completed</button>
+                                    </form>
+                                </td>
                             </tr>";
                         $rowNumber++;
                     }
                 } else {
-                    echo "<tr><td colspan='5'>No orders found</td></tr>";
+                    echo "<tr><td colspan='6'>No orders found</td></tr>";
                 }
                 $conn->close();
                 ?>

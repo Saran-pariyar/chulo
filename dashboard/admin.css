@@ -70,3 +70,21 @@ th, td {
 th {
     background-color: #f4f4f4;
 }
+
+
+.state-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-weight: 500;
+    margin: 0.5rem 0rem;
+    color: white;
+    background: red;
+    border: 2px solid red;
+    transition: 0.3s all;
+    font-weight: bold;
+  }
+  .state-btn:hover {
+    cursor: pointer;
+    color: red;
+    background-color: white;
+  }

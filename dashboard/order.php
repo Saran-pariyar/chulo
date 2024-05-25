@@ -14,12 +14,12 @@ $image = $_SESSION['image'];
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Check if all required fields are set
-    if (isset($_POST['foodname']) && isset($_POST['quantity']) && isset($_SESSION['username']) && isset($_SESSION['price'])) {
+    if (isset($_POST['foodname']) && isset($_POST['quantity']) && isset($_SESSION['username']) && isset($_POST['price'])) {
         // Assign values to variables
         $foodname = $_POST['foodname'];
         $quantity = $_POST['quantity'];
         $buyer_name = $_SESSION['username'];
-        $price = $_SESSION['price'];
+        $total_price = $_POST['price'];
 
         // Create connection
         $conn = new mysqli("localhost", "root", "", "chulo");
@@ -34,11 +34,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         
         // Prepare and bind parameters
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("siss", $foodname, $quantity, $buyer_name, $price);
+        $stmt->bind_param("siss", $foodname, $quantity, $buyer_name, $total_price);
 
         // Execute the statement
         if ($stmt->execute() === TRUE) {
-            echo "<script>alert('Order placed Successfully!'); setTimeout(function(){ window.location.href = 'dashboard.php'; }, 1000);</script>";
+            echo "<script>alert('Order placed Successfully!');  window.location.href = 'dashboard.php';</script>";
             // header("Location: dashboard.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
@@ -60,6 +60,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Page</title>
     <link rel="stylesheet" href="../styles/order.css">
+    <script>
+        function updateTotal() {
+            const price = <?php echo $price; ?>;
+            const quantity = document.getElementById('quantity').value;
+            const total = price * quantity;
+            document.getElementById('total').textContent = 'Rs ' + total;
+            document.getElementById('price').value = total;
+        }
+    </script>
 </head>
 <body>
     <div class="order-container">
@@ -73,9 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group quantity-group">
                 <label for="quantity" id="quantity-label">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+                <input type="number" id="quantity" name="quantity" min="1" value="1" required oninput="updateTotal()">
             </div>
+            <p>Total: <strong id="total">Rs <?php echo $price; ?></strong></p>
             <input type="hidden" name="foodname" value="<?php echo $foodname; ?>">
+            <input type="hidden" id="price" name="price" value="<?php echo $price; ?>">
             <button type="submit">Submit Order</button>
         </form>
     </div>
