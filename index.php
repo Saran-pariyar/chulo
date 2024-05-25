@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       $_SESSION['username'] = $username;
 
         // User found, login successful
-        echo "<script>alert('Login successful. Welcome " . $username . "!');
+        echo "<script>
         window.location.href = 'dashboard/dashboard.php';
         </script>";
 
