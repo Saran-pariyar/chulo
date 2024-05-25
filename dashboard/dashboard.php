@@ -12,7 +12,6 @@ else{
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  // Check if the 'price' field is set in the POST data
   if (isset($_POST['foodname'])) {
       // Save the price in the session
       $_SESSION['price'] = $_POST['price'];
@@ -23,16 +22,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       
       // Redirect to the same page to prevent form resubmission
       header("Location: order.php");
-      exit(); // Always exit after redirecting to prevent further execution
+      exit(); 
   }
 }
 
 // Logout functionality
 if (isset($_POST['logout'])) {
-  // Remove the username session
   unset($_SESSION['username']);
-  // Redirect to the login page or any other page after logout
-  // header("Location: ");
   header("Location: ../index.php");
 
   exit();
